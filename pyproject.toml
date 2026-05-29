@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mena-drought-early-warning"
+version = "0.1.0"
+description = "Forecast drought severity across the MENA region using Earth Engine data and temporal ML baselines."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "earthengine-api",
+    "geemap",
+    "folium",
+    "pandas",
+    "numpy",
+    "matplotlib",
+    "scikit-learn",
+    "jupyter",
+    "notebook",
+]
+
+[project.optional-dependencies]
+benchmarks = ["xgboost"]
+deep-learning = ["tensorflow"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

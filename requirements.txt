@@ -1,0 +1,9 @@
+earthengine-api
+geemap
+folium
+pandas
+numpy
+matplotlib
+scikit-learn
+jupyter
+notebook
