@@ -1,6 +1,8 @@
 # MENA Drought Early Warning
 
-This project forecasts drought severity 1 and 3 months ahead across the MENA region using Earth Engine satellite and climate data.
+This project forecasts drought severity 1, 3, and 6 months ahead across the MENA region using Earth Engine satellite and climate data.
+
+The upgraded version works as a small drought-forecast benchmark: it keeps fixed temporal splits, adds spatial holdout validation, exports class probabilities, and creates map-ready drought-risk outputs.
 
 It extends the drought-risk mapping project:
 
@@ -10,7 +12,7 @@ The mapping project describes current drought conditions. This project uses the 
 
 ## Project Question
 
-Given satellite, rainfall, temperature, and climatic water-balance information available at month `t`, can we forecast vegetation-stress-based drought severity at month `t+1` and `t+3`?
+Given satellite, rainfall, temperature, and climatic water-balance information available at month `t`, can vegetation-stress-based drought severity be forecast at month `t+1`, `t+3`, and `t+6`?
 
 ## Data Sources
 
@@ -31,6 +33,7 @@ Targets:
 
 - drought class at `t+1`
 - drought class at `t+3`
+- drought class at `t+6`
 
 Models:
 
@@ -39,7 +42,7 @@ Models:
 - optional XGBoost classifier
 - LSTM sequence dataset preparation
 
-Evaluation uses temporal train, validation, and test periods rather than random splits.
+Evaluation uses temporal train, validation, and test periods rather than random splits. The benchmark run also checks spatial transfer by holding out west, central, and east longitude bands.
 
 ## Repository Structure
 
@@ -71,7 +74,8 @@ mena-drought-early-warning/
 4. Build drought features, anomalies, and future targets.
 5. Split the data by time into train, validation, and test periods.
 6. Compare persistence and Random Forest baselines.
-7. Export forecast tables, reports, figures, and an interactive map.
+7. Run spatial holdout validation by region.
+8. Export forecast tables, reports, figures, class probabilities, and interactive maps.
 
 ## Setup
 
@@ -98,7 +102,17 @@ The notebook runs the full workflow from Earth Engine extraction through feature
 
 ## Scripted Baseline Run
 
-After exporting a monthly grid table to `data/processed/monthly_grid.csv`, the baseline workflow can be run without the notebook:
+After exporting a monthly grid table to `data/processed/monthly_grid.csv`, the baseline workflow can be run without the notebook.
+
+For a local reproducible run, build the sample monthly grid first:
+
+```bash
+python scripts/build_sample_monthly_grid.py
+```
+
+The sample grid is for checking the full workflow locally. Replace it with an Earth Engine export before treating model scores as real drought-forecast performance.
+
+Then run the baseline workflow:
 
 ```bash
 python scripts/run_baseline_pipeline.py --input data/processed/monthly_grid.csv
@@ -106,7 +120,7 @@ python scripts/run_baseline_pipeline.py --input data/processed/monthly_grid.csv
 
 Useful options:
 
-- `--horizons 1 3`
+- `--horizons 1 3 6`
 - `--selected-horizon 1`
 - `--issue-date 2024-09-01`
 - `--include-xgboost`
@@ -117,11 +131,16 @@ Useful options:
 Generated outputs are written under `outputs/`:
 
 - `outputs/tables/forecast_model_metrics.csv`
+- `outputs/tables/spatial_validation_metrics.csv`
 - `outputs/tables/forecast_issue_table_*.csv`
 - `outputs/reports/*classification_report*.txt`
 - `outputs/reports/baseline_run_summary.md`
 - `outputs/figures/*.png`
 - `outputs/maps/*.html`
+
+The short finished project report is:
+
+- `PROJECT_REPORT.md`
 
 ## Method Notes
 
@@ -130,3 +149,5 @@ Generated outputs are written under `outputs/`:
 - Forecast targets are created by shifting drought class forward within each grid-cell time series.
 - Persistence predicts the future drought class from the current drought class.
 - Random Forest uses the engineered hydroclimate and location features.
+- Random Forest class probabilities are exported as drought-risk and uncertainty fields.
+- Spatial validation holds out one longitude band at a time to test transfer to unseen regions.

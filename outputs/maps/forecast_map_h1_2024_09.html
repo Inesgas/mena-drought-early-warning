@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2cdfabae6f1f1e529c14acbbbe704793 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_2cdfabae6f1f1e529c14acbbbe704793" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2cdfabae6f1f1e529c14acbbbe704793 = L.map(
+                "map_2cdfabae6f1f1e529c14acbbbe704793",
+                {
+                    center: [28.0, 10.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0a50181f28e152cfa62ef997d4914a76 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_0a50181f28e152cfa62ef997d4914a76.addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+            var circle_marker_ae7782b5eed118ffb567459a6e562b01 = L.circleMarker(
+                [14.0, -14.0],
+                {"bubblingMouseEvents": true, "color": "#F18F01", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F18F01", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_c086e03fa67bb9688e14c57d83c6d1b2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ad13bd3cc527b60b8f1f790bb4705104 = $(`<div id="html_ad13bd3cc527b60b8f1f790bb4705104" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 0<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Mild Drought</div>`)[0];
+                popup_c086e03fa67bb9688e14c57d83c6d1b2.setContent(html_ad13bd3cc527b60b8f1f790bb4705104);
+            
+        
+
+        circle_marker_ae7782b5eed118ffb567459a6e562b01.bindPopup(popup_c086e03fa67bb9688e14c57d83c6d1b2)
+        ;
+
+        
+    
+    
+            var circle_marker_305cc9650daa331a634b0fb602330c3e = L.circleMarker(
+                [19.2, -14.0],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_51ab0669c7a99195f73ee52aca0304dc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_36aca3e33528bb7bd1f9b6f35037df3d = $(`<div id="html_36aca3e33528bb7bd1f9b6f35037df3d" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 1<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_51ab0669c7a99195f73ee52aca0304dc.setContent(html_36aca3e33528bb7bd1f9b6f35037df3d);
+            
+        
+
+        circle_marker_305cc9650daa331a634b0fb602330c3e.bindPopup(popup_51ab0669c7a99195f73ee52aca0304dc)
+        ;
+
+        
+    
+    
+            var circle_marker_cc1cbf9e5edd867d9c4d84c70d299b3d = L.circleMarker(
+                [24.4, -14.0],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_bc11dd1ba5eeadc91716d8202624356e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cef3a0b80524d7e34876df67d1e8715f = $(`<div id="html_cef3a0b80524d7e34876df67d1e8715f" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 2<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_bc11dd1ba5eeadc91716d8202624356e.setContent(html_cef3a0b80524d7e34876df67d1e8715f);
+            
+        
+
+        circle_marker_cc1cbf9e5edd867d9c4d84c70d299b3d.bindPopup(popup_bc11dd1ba5eeadc91716d8202624356e)
+        ;
+
+        
+    
+    
+            var circle_marker_1e45834dcac80a344dd8c03c71696300 = L.circleMarker(
+                [29.6, -14.0],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_af56d4314154c0a0a14718d43e0fcae4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a4ce6fa735eb31cb97cae11a85ddadf3 = $(`<div id="html_a4ce6fa735eb31cb97cae11a85ddadf3" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 3<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_af56d4314154c0a0a14718d43e0fcae4.setContent(html_a4ce6fa735eb31cb97cae11a85ddadf3);
+            
+        
+
+        circle_marker_1e45834dcac80a344dd8c03c71696300.bindPopup(popup_af56d4314154c0a0a14718d43e0fcae4)
+        ;
+
+        
+    
+    
+            var circle_marker_a051e843fbd342e60ea4638fae972148 = L.circleMarker(
+                [34.8, -14.0],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_afe3356ab855fcfd16215bf740f7ed68 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ba3be74e36ab5fe36d2e08f9b50a2c33 = $(`<div id="html_ba3be74e36ab5fe36d2e08f9b50a2c33" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 4<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_afe3356ab855fcfd16215bf740f7ed68.setContent(html_ba3be74e36ab5fe36d2e08f9b50a2c33);
+            
+        
+
+        circle_marker_a051e843fbd342e60ea4638fae972148.bindPopup(popup_afe3356ab855fcfd16215bf740f7ed68)
+        ;
+
+        
+    
+    
+            var circle_marker_a7aa28659589c8bc76108181788e22aa = L.circleMarker(
+                [40.0, -14.0],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_c0c4dd50b26a93ea9a4377c1871952e4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ef85d2c64635072d867c04db1af312bf = $(`<div id="html_ef85d2c64635072d867c04db1af312bf" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 5<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_c0c4dd50b26a93ea9a4377c1871952e4.setContent(html_ef85d2c64635072d867c04db1af312bf);
+            
+        
+
+        circle_marker_a7aa28659589c8bc76108181788e22aa.bindPopup(popup_c0c4dd50b26a93ea9a4377c1871952e4)
+        ;
+
+        
+    
+    
+            var circle_marker_91adc499ef786e756da51a382dbc3ec7 = L.circleMarker(
+                [14.0, -7.0909],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_cf8e20fa462d6d2e84e896bafc1795c9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fc441e0f201e80d608d5e02b95ad48b8 = $(`<div id="html_fc441e0f201e80d608d5e02b95ad48b8" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 6<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_cf8e20fa462d6d2e84e896bafc1795c9.setContent(html_fc441e0f201e80d608d5e02b95ad48b8);
+            
+        
+
+        circle_marker_91adc499ef786e756da51a382dbc3ec7.bindPopup(popup_cf8e20fa462d6d2e84e896bafc1795c9)
+        ;
+
+        
+    
+    
+            var circle_marker_11fdc7042306b5d1fa4b14359fd7738e = L.circleMarker(
+                [19.2, -7.0909],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_3987be8fb42f705de360c083e2b829dc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0f9f5b34c20151db522fa9f8929f7322 = $(`<div id="html_0f9f5b34c20151db522fa9f8929f7322" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 7<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_3987be8fb42f705de360c083e2b829dc.setContent(html_0f9f5b34c20151db522fa9f8929f7322);
+            
+        
+
+        circle_marker_11fdc7042306b5d1fa4b14359fd7738e.bindPopup(popup_3987be8fb42f705de360c083e2b829dc)
+        ;
+
+        
+    
+    
+            var circle_marker_d169a4835f9f46d24a6216619c02e5d2 = L.circleMarker(
+                [24.4, -7.0909],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_7e8e1cf6f8305db39edf938ea7c2e83a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1689beb589db83ec6f5a4ecb6d9ac5fc = $(`<div id="html_1689beb589db83ec6f5a4ecb6d9ac5fc" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 8<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_7e8e1cf6f8305db39edf938ea7c2e83a.setContent(html_1689beb589db83ec6f5a4ecb6d9ac5fc);
+            
+        
+
+        circle_marker_d169a4835f9f46d24a6216619c02e5d2.bindPopup(popup_7e8e1cf6f8305db39edf938ea7c2e83a)
+        ;
+
+        
+    
+    
+            var circle_marker_223802d6dacac0dcd434f099715d7527 = L.circleMarker(
+                [29.6, -7.0909],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_e2eb2317dfef87e90aafdcb29458acd4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8d466d6be80f89263df55a9402dfd8cc = $(`<div id="html_8d466d6be80f89263df55a9402dfd8cc" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 9<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_e2eb2317dfef87e90aafdcb29458acd4.setContent(html_8d466d6be80f89263df55a9402dfd8cc);
+            
+        
+
+        circle_marker_223802d6dacac0dcd434f099715d7527.bindPopup(popup_e2eb2317dfef87e90aafdcb29458acd4)
+        ;
+
+        
+    
+    
+            var circle_marker_42bfd7c1746bf0aaf76c93992bc4bc54 = L.circleMarker(
+                [34.8, -7.0909],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_200f6721fe740b736034eaebf1524d4c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_27202232ae15173e857425ae5a3b0c07 = $(`<div id="html_27202232ae15173e857425ae5a3b0c07" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 10<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_200f6721fe740b736034eaebf1524d4c.setContent(html_27202232ae15173e857425ae5a3b0c07);
+            
+        
+
+        circle_marker_42bfd7c1746bf0aaf76c93992bc4bc54.bindPopup(popup_200f6721fe740b736034eaebf1524d4c)
+        ;
+
+        
+    
+    
+            var circle_marker_07ad9211d7dc0ba7299f1addc7ac57c8 = L.circleMarker(
+                [40.0, -7.0909],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_41811ae69092b2c7934612f6b4955772 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_13d9d32d5914c5248f4c8b73c4c1c9b2 = $(`<div id="html_13d9d32d5914c5248f4c8b73c4c1c9b2" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 11<br>Issue date: 2024-09-01<br>Observed current class: Mild Drought<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_41811ae69092b2c7934612f6b4955772.setContent(html_13d9d32d5914c5248f4c8b73c4c1c9b2);
+            
+        
+
+        circle_marker_07ad9211d7dc0ba7299f1addc7ac57c8.bindPopup(popup_41811ae69092b2c7934612f6b4955772)
+        ;
+
+        
+    
+    
+            var circle_marker_44911cea58551dbc93c427198b043859 = L.circleMarker(
+                [14.0, -0.1818],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_f2cbe27eaf1001624d61636106018172 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_09664b5834ae32736ec0c87621668758 = $(`<div id="html_09664b5834ae32736ec0c87621668758" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 12<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_f2cbe27eaf1001624d61636106018172.setContent(html_09664b5834ae32736ec0c87621668758);
+            
+        
+
+        circle_marker_44911cea58551dbc93c427198b043859.bindPopup(popup_f2cbe27eaf1001624d61636106018172)
+        ;
+
+        
+    
+    
+            var circle_marker_a31a5adfc9f839401a99961f4439ab30 = L.circleMarker(
+                [19.2, -0.1818],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_7325835c612faefb213fc079440245a3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ebebe1430d08a4bc4ede31592ad0aaa5 = $(`<div id="html_ebebe1430d08a4bc4ede31592ad0aaa5" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 13<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_7325835c612faefb213fc079440245a3.setContent(html_ebebe1430d08a4bc4ede31592ad0aaa5);
+            
+        
+
+        circle_marker_a31a5adfc9f839401a99961f4439ab30.bindPopup(popup_7325835c612faefb213fc079440245a3)
+        ;
+
+        
+    
+    
+            var circle_marker_d5207a96fcf45db5f01c5bb14154ffc6 = L.circleMarker(
+                [24.4, -0.1818],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_a159472b7e0804e487cbe27314045090 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_638b040ec637d5bf7df84f29ae0530c8 = $(`<div id="html_638b040ec637d5bf7df84f29ae0530c8" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 14<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_a159472b7e0804e487cbe27314045090.setContent(html_638b040ec637d5bf7df84f29ae0530c8);
+            
+        
+
+        circle_marker_d5207a96fcf45db5f01c5bb14154ffc6.bindPopup(popup_a159472b7e0804e487cbe27314045090)
+        ;
+
+        
+    
+    
+            var circle_marker_1b233661c79947c8e34d5e50aeb52f24 = L.circleMarker(
+                [29.6, -0.1818],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_f5c318901e28de2614ec5a557ecd485f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2e311b2491a9aefd4414b53786df3c8f = $(`<div id="html_2e311b2491a9aefd4414b53786df3c8f" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 15<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_f5c318901e28de2614ec5a557ecd485f.setContent(html_2e311b2491a9aefd4414b53786df3c8f);
+            
+        
+
+        circle_marker_1b233661c79947c8e34d5e50aeb52f24.bindPopup(popup_f5c318901e28de2614ec5a557ecd485f)
+        ;
+
+        
+    
+    
+            var circle_marker_04b36b8dd59cff144ad7aa9b76b6fe20 = L.circleMarker(
+                [34.8, -0.1818],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_b2739e358ae48f5610753f53ef020666 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_571b0f17ee2c58df453a6b4b4fce1725 = $(`<div id="html_571b0f17ee2c58df453a6b4b4fce1725" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 16<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_b2739e358ae48f5610753f53ef020666.setContent(html_571b0f17ee2c58df453a6b4b4fce1725);
+            
+        
+
+        circle_marker_04b36b8dd59cff144ad7aa9b76b6fe20.bindPopup(popup_b2739e358ae48f5610753f53ef020666)
+        ;
+
+        
+    
+    
+            var circle_marker_bb8307fd1383149aac9eb49ec9014872 = L.circleMarker(
+                [40.0, -0.1818],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_0191d10f633a0819a6ce36fff19e1d97 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_796c065ff40bd992a625ebadc0ad7f00 = $(`<div id="html_796c065ff40bd992a625ebadc0ad7f00" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 17<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_0191d10f633a0819a6ce36fff19e1d97.setContent(html_796c065ff40bd992a625ebadc0ad7f00);
+            
+        
+
+        circle_marker_bb8307fd1383149aac9eb49ec9014872.bindPopup(popup_0191d10f633a0819a6ce36fff19e1d97)
+        ;
+
+        
+    
+    
+            var circle_marker_35ece7e562a79f1f3cd0ea953685391e = L.circleMarker(
+                [14.0, 6.7273],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_c22d81a8e8a4fddafea9af1922de2bfa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_180c0f54055050d0c58af5c270cbbe29 = $(`<div id="html_180c0f54055050d0c58af5c270cbbe29" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 18<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_c22d81a8e8a4fddafea9af1922de2bfa.setContent(html_180c0f54055050d0c58af5c270cbbe29);
+            
+        
+
+        circle_marker_35ece7e562a79f1f3cd0ea953685391e.bindPopup(popup_c22d81a8e8a4fddafea9af1922de2bfa)
+        ;
+
+        
+    
+    
+            var circle_marker_98fa6f8f7d52066a175ef3536b619be7 = L.circleMarker(
+                [19.2, 6.7273],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_04c67bd6235fe2fdb58fa65987b6898b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3ca261da1102987622b3d05639f9c28f = $(`<div id="html_3ca261da1102987622b3d05639f9c28f" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 19<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_04c67bd6235fe2fdb58fa65987b6898b.setContent(html_3ca261da1102987622b3d05639f9c28f);
+            
+        
+
+        circle_marker_98fa6f8f7d52066a175ef3536b619be7.bindPopup(popup_04c67bd6235fe2fdb58fa65987b6898b)
+        ;
+
+        
+    
+    
+            var circle_marker_3e77d3609879e46f963794865dedabfa = L.circleMarker(
+                [24.4, 6.7273],
+                {"bubblingMouseEvents": true, "color": "#F18F01", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F18F01", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_6f1bec72eb0979cbaca6feac08979e27 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_326d8bfc013f6d2ad7075e543104889c = $(`<div id="html_326d8bfc013f6d2ad7075e543104889c" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 20<br>Issue date: 2024-09-01<br>Observed current class: Mild Drought<br>Forecast class: Mild Drought</div>`)[0];
+                popup_6f1bec72eb0979cbaca6feac08979e27.setContent(html_326d8bfc013f6d2ad7075e543104889c);
+            
+        
+
+        circle_marker_3e77d3609879e46f963794865dedabfa.bindPopup(popup_6f1bec72eb0979cbaca6feac08979e27)
+        ;
+
+        
+    
+    
+            var circle_marker_a45ecb78bcfaf1a081dad05374db1662 = L.circleMarker(
+                [29.6, 6.7273],
+                {"bubblingMouseEvents": true, "color": "#F18F01", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F18F01", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_29e4fd3e2246f05cbd1798ba6871e0eb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0eddf70f60f3d7ad08d713ec8354905b = $(`<div id="html_0eddf70f60f3d7ad08d713ec8354905b" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 21<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Mild Drought</div>`)[0];
+                popup_29e4fd3e2246f05cbd1798ba6871e0eb.setContent(html_0eddf70f60f3d7ad08d713ec8354905b);
+            
+        
+
+        circle_marker_a45ecb78bcfaf1a081dad05374db1662.bindPopup(popup_29e4fd3e2246f05cbd1798ba6871e0eb)
+        ;
+
+        
+    
+    
+            var circle_marker_f6b9bc5dc1fd8ea22afe1c1c4ab4205c = L.circleMarker(
+                [34.8, 6.7273],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_c139161bb5c349b67c766652e4e51b68 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8f46c4dce6d80fbfea584146875c51a6 = $(`<div id="html_8f46c4dce6d80fbfea584146875c51a6" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 22<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_c139161bb5c349b67c766652e4e51b68.setContent(html_8f46c4dce6d80fbfea584146875c51a6);
+            
+        
+
+        circle_marker_f6b9bc5dc1fd8ea22afe1c1c4ab4205c.bindPopup(popup_c139161bb5c349b67c766652e4e51b68)
+        ;
+
+        
+    
+    
+            var circle_marker_41953864090c3ef34154e9f9518ae5c5 = L.circleMarker(
+                [40.0, 6.7273],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_313be6251654d4538b517f8de413a93c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a762cad44a0725b3b50a7d07cbd9d05d = $(`<div id="html_a762cad44a0725b3b50a7d07cbd9d05d" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 23<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_313be6251654d4538b517f8de413a93c.setContent(html_a762cad44a0725b3b50a7d07cbd9d05d);
+            
+        
+
+        circle_marker_41953864090c3ef34154e9f9518ae5c5.bindPopup(popup_313be6251654d4538b517f8de413a93c)
+        ;
+
+        
+    
+    
+            var circle_marker_e313a973522484ba4d36c5cf30baab3a = L.circleMarker(
+                [14.0, 13.6364],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_a4ac75be514a4dcf4e3f9b740b059d3e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_992cb5b19ff683fb81543b3bf75ec4db = $(`<div id="html_992cb5b19ff683fb81543b3bf75ec4db" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 24<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_a4ac75be514a4dcf4e3f9b740b059d3e.setContent(html_992cb5b19ff683fb81543b3bf75ec4db);
+            
+        
+
+        circle_marker_e313a973522484ba4d36c5cf30baab3a.bindPopup(popup_a4ac75be514a4dcf4e3f9b740b059d3e)
+        ;
+
+        
+    
+    
+            var circle_marker_5f014f7207f266938aa73574e94adcd7 = L.circleMarker(
+                [19.2, 13.6364],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_4cd3ef50cbcddf811ae420ca016cdd86 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c820464199c0908bf034d496efaa6f3b = $(`<div id="html_c820464199c0908bf034d496efaa6f3b" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 25<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_4cd3ef50cbcddf811ae420ca016cdd86.setContent(html_c820464199c0908bf034d496efaa6f3b);
+            
+        
+
+        circle_marker_5f014f7207f266938aa73574e94adcd7.bindPopup(popup_4cd3ef50cbcddf811ae420ca016cdd86)
+        ;
+
+        
+    
+    
+            var circle_marker_23bb16293f5438312fbf37fbd56ab6d1 = L.circleMarker(
+                [24.4, 13.6364],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_5798981dd1c729eba107bcea88c81470 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eb959bb35d47bc719bed26b30280ec4f = $(`<div id="html_eb959bb35d47bc719bed26b30280ec4f" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 26<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_5798981dd1c729eba107bcea88c81470.setContent(html_eb959bb35d47bc719bed26b30280ec4f);
+            
+        
+
+        circle_marker_23bb16293f5438312fbf37fbd56ab6d1.bindPopup(popup_5798981dd1c729eba107bcea88c81470)
+        ;
+
+        
+    
+    
+            var circle_marker_971806d06a39bee05306fd3a2264b493 = L.circleMarker(
+                [29.6, 13.6364],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_0f5f6a04bf831766cfe02cddb9d2781e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eb04b29556b537458d786b5cd898cfd0 = $(`<div id="html_eb04b29556b537458d786b5cd898cfd0" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 27<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_0f5f6a04bf831766cfe02cddb9d2781e.setContent(html_eb04b29556b537458d786b5cd898cfd0);
+            
+        
+
+        circle_marker_971806d06a39bee05306fd3a2264b493.bindPopup(popup_0f5f6a04bf831766cfe02cddb9d2781e)
+        ;
+
+        
+    
+    
+            var circle_marker_59c20104d6c349415d0efdcbb9c706b3 = L.circleMarker(
+                [34.8, 13.6364],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_45278453fc1002c71e0774cbcd0ae946 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_beb00de1731ea113a4247228b8f61c85 = $(`<div id="html_beb00de1731ea113a4247228b8f61c85" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 28<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_45278453fc1002c71e0774cbcd0ae946.setContent(html_beb00de1731ea113a4247228b8f61c85);
+            
+        
+
+        circle_marker_59c20104d6c349415d0efdcbb9c706b3.bindPopup(popup_45278453fc1002c71e0774cbcd0ae946)
+        ;
+
+        
+    
+    
+            var circle_marker_01ccdf33926912b7fac43fbb67a7855e = L.circleMarker(
+                [40.0, 13.6364],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_be746dfd48d8ad91101a9d989ebb04af = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_70d525fb106d322d0b221059813aee79 = $(`<div id="html_70d525fb106d322d0b221059813aee79" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 29<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_be746dfd48d8ad91101a9d989ebb04af.setContent(html_70d525fb106d322d0b221059813aee79);
+            
+        
+
+        circle_marker_01ccdf33926912b7fac43fbb67a7855e.bindPopup(popup_be746dfd48d8ad91101a9d989ebb04af)
+        ;
+
+        
+    
+    
+            var circle_marker_932db31984ad97fbd193d618933803a0 = L.circleMarker(
+                [14.0, 20.5455],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_b08bb27ba5a9c959f07c451679986ad1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b70a08b77f9fc7702cb07f2fe9e26b83 = $(`<div id="html_b70a08b77f9fc7702cb07f2fe9e26b83" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 30<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_b08bb27ba5a9c959f07c451679986ad1.setContent(html_b70a08b77f9fc7702cb07f2fe9e26b83);
+            
+        
+
+        circle_marker_932db31984ad97fbd193d618933803a0.bindPopup(popup_b08bb27ba5a9c959f07c451679986ad1)
+        ;
+
+        
+    
+    
+            var circle_marker_4f6b4e014fa0021d84b6f8ad545bff67 = L.circleMarker(
+                [19.2, 20.5455],
+                {"bubblingMouseEvents": true, "color": "#F18F01", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F18F01", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_750fa98b3d430b360fff5130d084701b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0fb1e52365d9a44682752203a2b0af3c = $(`<div id="html_0fb1e52365d9a44682752203a2b0af3c" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 31<br>Issue date: 2024-09-01<br>Observed current class: Mild Drought<br>Forecast class: Mild Drought</div>`)[0];
+                popup_750fa98b3d430b360fff5130d084701b.setContent(html_0fb1e52365d9a44682752203a2b0af3c);
+            
+        
+
+        circle_marker_4f6b4e014fa0021d84b6f8ad545bff67.bindPopup(popup_750fa98b3d430b360fff5130d084701b)
+        ;
+
+        
+    
+    
+            var circle_marker_9b199b02a0606048a4967d2394b480de = L.circleMarker(
+                [24.4, 20.5455],
+                {"bubblingMouseEvents": true, "color": "#F18F01", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F18F01", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_1c5289f38ef143049605ea93bdd1db5c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4b126baf8e7a1fcca38177cdc96f1a4f = $(`<div id="html_4b126baf8e7a1fcca38177cdc96f1a4f" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 32<br>Issue date: 2024-09-01<br>Observed current class: Mild Drought<br>Forecast class: Mild Drought</div>`)[0];
+                popup_1c5289f38ef143049605ea93bdd1db5c.setContent(html_4b126baf8e7a1fcca38177cdc96f1a4f);
+            
+        
+
+        circle_marker_9b199b02a0606048a4967d2394b480de.bindPopup(popup_1c5289f38ef143049605ea93bdd1db5c)
+        ;
+
+        
+    
+    
+            var circle_marker_9631813c8f844dcf5de784dffe0ee84f = L.circleMarker(
+                [29.6, 20.5455],
+                {"bubblingMouseEvents": true, "color": "#F18F01", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F18F01", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_c1895b7b0435af90649846adbf9e6cd1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_226dfd7094b226aae66f690e2d23ddf7 = $(`<div id="html_226dfd7094b226aae66f690e2d23ddf7" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 33<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Mild Drought</div>`)[0];
+                popup_c1895b7b0435af90649846adbf9e6cd1.setContent(html_226dfd7094b226aae66f690e2d23ddf7);
+            
+        
+
+        circle_marker_9631813c8f844dcf5de784dffe0ee84f.bindPopup(popup_c1895b7b0435af90649846adbf9e6cd1)
+        ;
+
+        
+    
+    
+            var circle_marker_23e7059b933e860689d7ebaac609db8c = L.circleMarker(
+                [34.8, 20.5455],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_4786745b562ecdc14b12195a189041a6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_36f3060830c3df406e957c3aad59bf69 = $(`<div id="html_36f3060830c3df406e957c3aad59bf69" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 34<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_4786745b562ecdc14b12195a189041a6.setContent(html_36f3060830c3df406e957c3aad59bf69);
+            
+        
+
+        circle_marker_23e7059b933e860689d7ebaac609db8c.bindPopup(popup_4786745b562ecdc14b12195a189041a6)
+        ;
+
+        
+    
+    
+            var circle_marker_545bafe8e3a15508e45fdc177c9013dc = L.circleMarker(
+                [40.0, 20.5455],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_fdb688f3965585e62d0a8507c9668457 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_04ababe429f1719130026632c8bde56f = $(`<div id="html_04ababe429f1719130026632c8bde56f" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 35<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_fdb688f3965585e62d0a8507c9668457.setContent(html_04ababe429f1719130026632c8bde56f);
+            
+        
+
+        circle_marker_545bafe8e3a15508e45fdc177c9013dc.bindPopup(popup_fdb688f3965585e62d0a8507c9668457)
+        ;
+
+        
+    
+    
+            var circle_marker_e2d814cd19902f8f9df06fcf51e9a9b1 = L.circleMarker(
+                [14.0, 27.4545],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_c56992b69b284adf2f523bfc84f52792 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_19804bdaca831ab2f42c6d62d749a394 = $(`<div id="html_19804bdaca831ab2f42c6d62d749a394" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 36<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_c56992b69b284adf2f523bfc84f52792.setContent(html_19804bdaca831ab2f42c6d62d749a394);
+            
+        
+
+        circle_marker_e2d814cd19902f8f9df06fcf51e9a9b1.bindPopup(popup_c56992b69b284adf2f523bfc84f52792)
+        ;
+
+        
+    
+    
+            var circle_marker_4b7075871a69e913e9e43d3d4580e51d = L.circleMarker(
+                [19.2, 27.4545],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_40866328b499ec75c7223f55a652083f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4355224de79feff1721c4d6fde66ba14 = $(`<div id="html_4355224de79feff1721c4d6fde66ba14" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 37<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_40866328b499ec75c7223f55a652083f.setContent(html_4355224de79feff1721c4d6fde66ba14);
+            
+        
+
+        circle_marker_4b7075871a69e913e9e43d3d4580e51d.bindPopup(popup_40866328b499ec75c7223f55a652083f)
+        ;
+
+        
+    
+    
+            var circle_marker_7a6187b0b08fd439097f07996cb00700 = L.circleMarker(
+                [24.4, 27.4545],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_0b6770b7101c3c3e7be0e24cb47fff9a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fc054c3dde8364ec66c544eabc2fcee6 = $(`<div id="html_fc054c3dde8364ec66c544eabc2fcee6" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 38<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_0b6770b7101c3c3e7be0e24cb47fff9a.setContent(html_fc054c3dde8364ec66c544eabc2fcee6);
+            
+        
+
+        circle_marker_7a6187b0b08fd439097f07996cb00700.bindPopup(popup_0b6770b7101c3c3e7be0e24cb47fff9a)
+        ;
+
+        
+    
+    
+            var circle_marker_db47ccfa54850622ba312714cf9c85cf = L.circleMarker(
+                [29.6, 27.4545],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_6b3f75aff6ccb3451a87d23c0fbeaa7d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_717ff982d04f9121186ec0a5a45721cf = $(`<div id="html_717ff982d04f9121186ec0a5a45721cf" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 39<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_6b3f75aff6ccb3451a87d23c0fbeaa7d.setContent(html_717ff982d04f9121186ec0a5a45721cf);
+            
+        
+
+        circle_marker_db47ccfa54850622ba312714cf9c85cf.bindPopup(popup_6b3f75aff6ccb3451a87d23c0fbeaa7d)
+        ;
+
+        
+    
+    
+            var circle_marker_6b5e0f4bea294734d79c139bc0c52c1f = L.circleMarker(
+                [34.8, 27.4545],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_a134492f5329014fa12af30619947e93 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_88eb40e4c0f4b4c66502d293ade98c91 = $(`<div id="html_88eb40e4c0f4b4c66502d293ade98c91" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 40<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_a134492f5329014fa12af30619947e93.setContent(html_88eb40e4c0f4b4c66502d293ade98c91);
+            
+        
+
+        circle_marker_6b5e0f4bea294734d79c139bc0c52c1f.bindPopup(popup_a134492f5329014fa12af30619947e93)
+        ;
+
+        
+    
+    
+            var circle_marker_7a37c434991cd4d875582049bbb09fa2 = L.circleMarker(
+                [40.0, 27.4545],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_bb5afebfae861aab2e8d3c75b52178f0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_85077adf22c1d6f64485761fa3f84859 = $(`<div id="html_85077adf22c1d6f64485761fa3f84859" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 41<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_bb5afebfae861aab2e8d3c75b52178f0.setContent(html_85077adf22c1d6f64485761fa3f84859);
+            
+        
+
+        circle_marker_7a37c434991cd4d875582049bbb09fa2.bindPopup(popup_bb5afebfae861aab2e8d3c75b52178f0)
+        ;
+
+        
+    
+    
+            var circle_marker_93c651e4c235af0ed29ca4b49a831b7b = L.circleMarker(
+                [14.0, 34.3636],
+                {"bubblingMouseEvents": true, "color": "#F18F01", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F18F01", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_a87c002883eef41582037693e33769e7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6e456b915de0d9a319d994fc54b4ca31 = $(`<div id="html_6e456b915de0d9a319d994fc54b4ca31" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 42<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Mild Drought</div>`)[0];
+                popup_a87c002883eef41582037693e33769e7.setContent(html_6e456b915de0d9a319d994fc54b4ca31);
+            
+        
+
+        circle_marker_93c651e4c235af0ed29ca4b49a831b7b.bindPopup(popup_a87c002883eef41582037693e33769e7)
+        ;
+
+        
+    
+    
+            var circle_marker_d471153a2b3626da6f6f89a666daeab1 = L.circleMarker(
+                [19.2, 34.3636],
+                {"bubblingMouseEvents": true, "color": "#F18F01", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F18F01", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_9ee15e0905437825013344e3ea9f23f5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_237199f247b730c93a70757a2908af91 = $(`<div id="html_237199f247b730c93a70757a2908af91" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 43<br>Issue date: 2024-09-01<br>Observed current class: Mild Drought<br>Forecast class: Mild Drought</div>`)[0];
+                popup_9ee15e0905437825013344e3ea9f23f5.setContent(html_237199f247b730c93a70757a2908af91);
+            
+        
+
+        circle_marker_d471153a2b3626da6f6f89a666daeab1.bindPopup(popup_9ee15e0905437825013344e3ea9f23f5)
+        ;
+
+        
+    
+    
+            var circle_marker_8cc52b0342166d3a5e6c0d5689e8c478 = L.circleMarker(
+                [24.4, 34.3636],
+                {"bubblingMouseEvents": true, "color": "#F18F01", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F18F01", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_dc31983a565e593dc927ceb43d7abc07 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7274dccf75c38ad26fa329c0001d921e = $(`<div id="html_7274dccf75c38ad26fa329c0001d921e" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 44<br>Issue date: 2024-09-01<br>Observed current class: Moderate Drought<br>Forecast class: Mild Drought</div>`)[0];
+                popup_dc31983a565e593dc927ceb43d7abc07.setContent(html_7274dccf75c38ad26fa329c0001d921e);
+            
+        
+
+        circle_marker_8cc52b0342166d3a5e6c0d5689e8c478.bindPopup(popup_dc31983a565e593dc927ceb43d7abc07)
+        ;
+
+        
+    
+    
+            var circle_marker_87baf1d0e2056de953d4dc0392e5a145 = L.circleMarker(
+                [29.6, 34.3636],
+                {"bubblingMouseEvents": true, "color": "#F18F01", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F18F01", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_56ea47dfa88f1a3df6dba5453beb4c81 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8dc08d747027cf6f19a18e9eb3b1baef = $(`<div id="html_8dc08d747027cf6f19a18e9eb3b1baef" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 45<br>Issue date: 2024-09-01<br>Observed current class: Mild Drought<br>Forecast class: Mild Drought</div>`)[0];
+                popup_56ea47dfa88f1a3df6dba5453beb4c81.setContent(html_8dc08d747027cf6f19a18e9eb3b1baef);
+            
+        
+
+        circle_marker_87baf1d0e2056de953d4dc0392e5a145.bindPopup(popup_56ea47dfa88f1a3df6dba5453beb4c81)
+        ;
+
+        
+    
+    
+            var circle_marker_49b60f8990cd293117163b60d61a58a5 = L.circleMarker(
+                [34.8, 34.3636],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_0ed8aa7b15ebe2d535ffbc127567c11a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_17fed31948d7359fbce324a5e5189a8e = $(`<div id="html_17fed31948d7359fbce324a5e5189a8e" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 46<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_0ed8aa7b15ebe2d535ffbc127567c11a.setContent(html_17fed31948d7359fbce324a5e5189a8e);
+            
+        
+
+        circle_marker_49b60f8990cd293117163b60d61a58a5.bindPopup(popup_0ed8aa7b15ebe2d535ffbc127567c11a)
+        ;
+
+        
+    
+    
+            var circle_marker_eb00377cf0d5e65c2486185cae2258ea = L.circleMarker(
+                [40.0, 34.3636],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_00bf6df9e8780eb50e9c50e64166a06d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d0125ef25f4e8e6f6487acf7f37a3573 = $(`<div id="html_d0125ef25f4e8e6f6487acf7f37a3573" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 47<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_00bf6df9e8780eb50e9c50e64166a06d.setContent(html_d0125ef25f4e8e6f6487acf7f37a3573);
+            
+        
+
+        circle_marker_eb00377cf0d5e65c2486185cae2258ea.bindPopup(popup_00bf6df9e8780eb50e9c50e64166a06d)
+        ;
+
+        
+    
+    
+            var circle_marker_e48128a1838bf2706bfcea640c51ce9d = L.circleMarker(
+                [14.0, 41.2727],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_b9c9ef8e1491513e77dbb6f9e7e2bc94 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5032d68ace65d7f25733975106358681 = $(`<div id="html_5032d68ace65d7f25733975106358681" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 48<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_b9c9ef8e1491513e77dbb6f9e7e2bc94.setContent(html_5032d68ace65d7f25733975106358681);
+            
+        
+
+        circle_marker_e48128a1838bf2706bfcea640c51ce9d.bindPopup(popup_b9c9ef8e1491513e77dbb6f9e7e2bc94)
+        ;
+
+        
+    
+    
+            var circle_marker_d0b553b95f995da9458479de4c5cd874 = L.circleMarker(
+                [19.2, 41.2727],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_af5ce7c1ff6f0168acb3e28b08ab3d7a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f531c9d30277dd9a98b0eae5795d247d = $(`<div id="html_f531c9d30277dd9a98b0eae5795d247d" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 49<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_af5ce7c1ff6f0168acb3e28b08ab3d7a.setContent(html_f531c9d30277dd9a98b0eae5795d247d);
+            
+        
+
+        circle_marker_d0b553b95f995da9458479de4c5cd874.bindPopup(popup_af5ce7c1ff6f0168acb3e28b08ab3d7a)
+        ;
+
+        
+    
+    
+            var circle_marker_d1c58047c6c367a4024710f36845dcde = L.circleMarker(
+                [24.4, 41.2727],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_05df40665893f9b29196eef5b3deb49c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_74449e3f781549e0be75fa8db31e604f = $(`<div id="html_74449e3f781549e0be75fa8db31e604f" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 50<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_05df40665893f9b29196eef5b3deb49c.setContent(html_74449e3f781549e0be75fa8db31e604f);
+            
+        
+
+        circle_marker_d1c58047c6c367a4024710f36845dcde.bindPopup(popup_05df40665893f9b29196eef5b3deb49c)
+        ;
+
+        
+    
+    
+            var circle_marker_005e9336edcfabdded62dfa1935a560b = L.circleMarker(
+                [29.6, 41.2727],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_dc44e96747adac587c6ad72521900480 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1be9faefce0d7636da1175008475d5d3 = $(`<div id="html_1be9faefce0d7636da1175008475d5d3" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 51<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_dc44e96747adac587c6ad72521900480.setContent(html_1be9faefce0d7636da1175008475d5d3);
+            
+        
+
+        circle_marker_005e9336edcfabdded62dfa1935a560b.bindPopup(popup_dc44e96747adac587c6ad72521900480)
+        ;
+
+        
+    
+    
+            var circle_marker_be874619033d43a45da05027c8bffcba = L.circleMarker(
+                [34.8, 41.2727],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_3befac8c65678daa3b84697b61ae34b5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c3d105204decd7710309a78c61386914 = $(`<div id="html_c3d105204decd7710309a78c61386914" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 52<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_3befac8c65678daa3b84697b61ae34b5.setContent(html_c3d105204decd7710309a78c61386914);
+            
+        
+
+        circle_marker_be874619033d43a45da05027c8bffcba.bindPopup(popup_3befac8c65678daa3b84697b61ae34b5)
+        ;
+
+        
+    
+    
+            var circle_marker_0959110b40359afa1c087b22cd07ee00 = L.circleMarker(
+                [40.0, 41.2727],
+                {"bubblingMouseEvents": true, "color": "#F18F01", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F18F01", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_43894bfb384951c908d8abd061240ce7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_946d53c3477b32b8b5a6055fe525a006 = $(`<div id="html_946d53c3477b32b8b5a6055fe525a006" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 53<br>Issue date: 2024-09-01<br>Observed current class: Mild Drought<br>Forecast class: Mild Drought</div>`)[0];
+                popup_43894bfb384951c908d8abd061240ce7.setContent(html_946d53c3477b32b8b5a6055fe525a006);
+            
+        
+
+        circle_marker_0959110b40359afa1c087b22cd07ee00.bindPopup(popup_43894bfb384951c908d8abd061240ce7)
+        ;
+
+        
+    
+    
+            var circle_marker_9611bd9bfb868ff3708feb7c7c595489 = L.circleMarker(
+                [14.0, 48.1818],
+                {"bubblingMouseEvents": true, "color": "#F18F01", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F18F01", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_c9907925168cf3e44fbe54339e38e2fb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_db2777a1e13282788d616bd549442f45 = $(`<div id="html_db2777a1e13282788d616bd549442f45" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 54<br>Issue date: 2024-09-01<br>Observed current class: Mild Drought<br>Forecast class: Mild Drought</div>`)[0];
+                popup_c9907925168cf3e44fbe54339e38e2fb.setContent(html_db2777a1e13282788d616bd549442f45);
+            
+        
+
+        circle_marker_9611bd9bfb868ff3708feb7c7c595489.bindPopup(popup_c9907925168cf3e44fbe54339e38e2fb)
+        ;
+
+        
+    
+    
+            var circle_marker_d0e84c8dfb78141f485c12c1774f83cc = L.circleMarker(
+                [19.2, 48.1818],
+                {"bubblingMouseEvents": true, "color": "#F18F01", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F18F01", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_0da100cd40dad038be16f725b1587ea2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_414b00ae357bf98c73c7180e650363ef = $(`<div id="html_414b00ae357bf98c73c7180e650363ef" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 55<br>Issue date: 2024-09-01<br>Observed current class: Mild Drought<br>Forecast class: Mild Drought</div>`)[0];
+                popup_0da100cd40dad038be16f725b1587ea2.setContent(html_414b00ae357bf98c73c7180e650363ef);
+            
+        
+
+        circle_marker_d0e84c8dfb78141f485c12c1774f83cc.bindPopup(popup_0da100cd40dad038be16f725b1587ea2)
+        ;
+
+        
+    
+    
+            var circle_marker_b28ac70508df9c143c96f33fef492b52 = L.circleMarker(
+                [24.4, 48.1818],
+                {"bubblingMouseEvents": true, "color": "#F18F01", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F18F01", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_f1c4b4e267ed3d974a4fb3441e18f48f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0fe12e29a0d048db477b8f4540617c11 = $(`<div id="html_0fe12e29a0d048db477b8f4540617c11" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 56<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Mild Drought</div>`)[0];
+                popup_f1c4b4e267ed3d974a4fb3441e18f48f.setContent(html_0fe12e29a0d048db477b8f4540617c11);
+            
+        
+
+        circle_marker_b28ac70508df9c143c96f33fef492b52.bindPopup(popup_f1c4b4e267ed3d974a4fb3441e18f48f)
+        ;
+
+        
+    
+    
+            var circle_marker_cb29c70583d3c854e99b712562fa9497 = L.circleMarker(
+                [29.6, 48.1818],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_2284fb2848661156ece6925aa3532d07 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_74a3de4538a7878261b77bc52e564aac = $(`<div id="html_74a3de4538a7878261b77bc52e564aac" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 57<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_2284fb2848661156ece6925aa3532d07.setContent(html_74a3de4538a7878261b77bc52e564aac);
+            
+        
+
+        circle_marker_cb29c70583d3c854e99b712562fa9497.bindPopup(popup_2284fb2848661156ece6925aa3532d07)
+        ;
+
+        
+    
+    
+            var circle_marker_32a1dbc9aff459089b9aceb5f930723c = L.circleMarker(
+                [34.8, 48.1818],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_0d751dbc5c367a468419847e34ad88d9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_67fbc7ee27009e600548b8b667a3d4c6 = $(`<div id="html_67fbc7ee27009e600548b8b667a3d4c6" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 58<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_0d751dbc5c367a468419847e34ad88d9.setContent(html_67fbc7ee27009e600548b8b667a3d4c6);
+            
+        
+
+        circle_marker_32a1dbc9aff459089b9aceb5f930723c.bindPopup(popup_0d751dbc5c367a468419847e34ad88d9)
+        ;
+
+        
+    
+    
+            var circle_marker_206d1eddc5e9adedbb54ea06cf3e7574 = L.circleMarker(
+                [40.0, 48.1818],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_c2e60a3b7de7abdd06a1ec79cfe0ef5f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c33fd0c9ca50bade886a26d4141090ef = $(`<div id="html_c33fd0c9ca50bade886a26d4141090ef" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 59<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_c2e60a3b7de7abdd06a1ec79cfe0ef5f.setContent(html_c33fd0c9ca50bade886a26d4141090ef);
+            
+        
+
+        circle_marker_206d1eddc5e9adedbb54ea06cf3e7574.bindPopup(popup_c2e60a3b7de7abdd06a1ec79cfe0ef5f)
+        ;
+
+        
+    
+    
+            var circle_marker_72643df0553445e90bbd3698011a4f1d = L.circleMarker(
+                [14.0, 55.0909],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_c0acb00cd22aaa6630aeeb06034d64c4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a3d8d095e96e2d748746803ce40b147d = $(`<div id="html_a3d8d095e96e2d748746803ce40b147d" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 60<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_c0acb00cd22aaa6630aeeb06034d64c4.setContent(html_a3d8d095e96e2d748746803ce40b147d);
+            
+        
+
+        circle_marker_72643df0553445e90bbd3698011a4f1d.bindPopup(popup_c0acb00cd22aaa6630aeeb06034d64c4)
+        ;
+
+        
+    
+    
+            var circle_marker_069b50ac80bd4fd9e59422313f8e13d3 = L.circleMarker(
+                [19.2, 55.0909],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_524e021b09f04718764d04917d734cb2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4e96b0babf9ab8989bef58fa2d759ae2 = $(`<div id="html_4e96b0babf9ab8989bef58fa2d759ae2" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 61<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_524e021b09f04718764d04917d734cb2.setContent(html_4e96b0babf9ab8989bef58fa2d759ae2);
+            
+        
+
+        circle_marker_069b50ac80bd4fd9e59422313f8e13d3.bindPopup(popup_524e021b09f04718764d04917d734cb2)
+        ;
+
+        
+    
+    
+            var circle_marker_6ffcf13089f2605211dffbf5eb373b65 = L.circleMarker(
+                [24.4, 55.0909],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_216569e971ec68519c7e3142950cfed0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7d99480089185663b3ddeb6cb288483a = $(`<div id="html_7d99480089185663b3ddeb6cb288483a" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 62<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_216569e971ec68519c7e3142950cfed0.setContent(html_7d99480089185663b3ddeb6cb288483a);
+            
+        
+
+        circle_marker_6ffcf13089f2605211dffbf5eb373b65.bindPopup(popup_216569e971ec68519c7e3142950cfed0)
+        ;
+
+        
+    
+    
+            var circle_marker_d657ef5f4bb8e18a965d99ada838b466 = L.circleMarker(
+                [29.6, 55.0909],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_a3b77e7be06a1c6b6d9a92e8371f0eb0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_68f22f67ea290a9f314daab703ea89cf = $(`<div id="html_68f22f67ea290a9f314daab703ea89cf" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 63<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_a3b77e7be06a1c6b6d9a92e8371f0eb0.setContent(html_68f22f67ea290a9f314daab703ea89cf);
+            
+        
+
+        circle_marker_d657ef5f4bb8e18a965d99ada838b466.bindPopup(popup_a3b77e7be06a1c6b6d9a92e8371f0eb0)
+        ;
+
+        
+    
+    
+            var circle_marker_47d1a7dbc9b31032707b8d2545b9b2ab = L.circleMarker(
+                [34.8, 55.0909],
+                {"bubblingMouseEvents": true, "color": "#F18F01", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F18F01", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_2519a2d0dadb2e7f44dd5eceb08f35a0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2411548e30d6dc20aeff46f458efb90b = $(`<div id="html_2411548e30d6dc20aeff46f458efb90b" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 64<br>Issue date: 2024-09-01<br>Observed current class: Moderate Drought<br>Forecast class: Mild Drought</div>`)[0];
+                popup_2519a2d0dadb2e7f44dd5eceb08f35a0.setContent(html_2411548e30d6dc20aeff46f458efb90b);
+            
+        
+
+        circle_marker_47d1a7dbc9b31032707b8d2545b9b2ab.bindPopup(popup_2519a2d0dadb2e7f44dd5eceb08f35a0)
+        ;
+
+        
+    
+    
+            var circle_marker_fa9c3a802e4872a222fe84aec01ebd01 = L.circleMarker(
+                [40.0, 55.0909],
+                {"bubblingMouseEvents": true, "color": "#F18F01", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F18F01", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_5e0aa345d859d523a5e09608a9c5dca0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ea4381acde2ad375eaff44d2fcaf9ca2 = $(`<div id="html_ea4381acde2ad375eaff44d2fcaf9ca2" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 65<br>Issue date: 2024-09-01<br>Observed current class: Mild Drought<br>Forecast class: Mild Drought</div>`)[0];
+                popup_5e0aa345d859d523a5e09608a9c5dca0.setContent(html_ea4381acde2ad375eaff44d2fcaf9ca2);
+            
+        
+
+        circle_marker_fa9c3a802e4872a222fe84aec01ebd01.bindPopup(popup_5e0aa345d859d523a5e09608a9c5dca0)
+        ;
+
+        
+    
+    
+            var circle_marker_c7d1277c755f38504e9200f45978c15b = L.circleMarker(
+                [14.0, 62.0],
+                {"bubblingMouseEvents": true, "color": "#F18F01", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F18F01", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_80e45f61e15febd667e0f92d03df3bbd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3495db8099e03a72f6843b0b270d6012 = $(`<div id="html_3495db8099e03a72f6843b0b270d6012" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 66<br>Issue date: 2024-09-01<br>Observed current class: Mild Drought<br>Forecast class: Mild Drought</div>`)[0];
+                popup_80e45f61e15febd667e0f92d03df3bbd.setContent(html_3495db8099e03a72f6843b0b270d6012);
+            
+        
+
+        circle_marker_c7d1277c755f38504e9200f45978c15b.bindPopup(popup_80e45f61e15febd667e0f92d03df3bbd)
+        ;
+
+        
+    
+    
+            var circle_marker_3902044b9adc29425c9c1bcd7ccea34a = L.circleMarker(
+                [19.2, 62.0],
+                {"bubblingMouseEvents": true, "color": "#F18F01", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F18F01", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_2611ec7818dbd644422bc3074e2a9d4b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_21d544dff0b8080954bbe9bd8b5e6f12 = $(`<div id="html_21d544dff0b8080954bbe9bd8b5e6f12" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 67<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Mild Drought</div>`)[0];
+                popup_2611ec7818dbd644422bc3074e2a9d4b.setContent(html_21d544dff0b8080954bbe9bd8b5e6f12);
+            
+        
+
+        circle_marker_3902044b9adc29425c9c1bcd7ccea34a.bindPopup(popup_2611ec7818dbd644422bc3074e2a9d4b)
+        ;
+
+        
+    
+    
+            var circle_marker_a3dd3159a6503c0825c9c721bfda3853 = L.circleMarker(
+                [24.4, 62.0],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_d0ebf38da2ec1053bce24b9fac8cc25a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7af08f9054d8cd98edc48f1f230d2fa8 = $(`<div id="html_7af08f9054d8cd98edc48f1f230d2fa8" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 68<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_d0ebf38da2ec1053bce24b9fac8cc25a.setContent(html_7af08f9054d8cd98edc48f1f230d2fa8);
+            
+        
+
+        circle_marker_a3dd3159a6503c0825c9c721bfda3853.bindPopup(popup_d0ebf38da2ec1053bce24b9fac8cc25a)
+        ;
+
+        
+    
+    
+            var circle_marker_b8204a0ca49a511abbb430bb3a1fdd4c = L.circleMarker(
+                [29.6, 62.0],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_f71d21146b255dca490a36f4e22929c5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5e170c3491beddc0d0b9acf6eab33e59 = $(`<div id="html_5e170c3491beddc0d0b9acf6eab33e59" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 69<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_f71d21146b255dca490a36f4e22929c5.setContent(html_5e170c3491beddc0d0b9acf6eab33e59);
+            
+        
+
+        circle_marker_b8204a0ca49a511abbb430bb3a1fdd4c.bindPopup(popup_f71d21146b255dca490a36f4e22929c5)
+        ;
+
+        
+    
+    
+            var circle_marker_0689872bba7967161ef3e9513e30e636 = L.circleMarker(
+                [34.8, 62.0],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_57707bca97e9850ccbb584efd8164d6e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a086d75258c579db331cc625e5cd330c = $(`<div id="html_a086d75258c579db331cc625e5cd330c" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 70<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_57707bca97e9850ccbb584efd8164d6e.setContent(html_a086d75258c579db331cc625e5cd330c);
+            
+        
+
+        circle_marker_0689872bba7967161ef3e9513e30e636.bindPopup(popup_57707bca97e9850ccbb584efd8164d6e)
+        ;
+
+        
+    
+    
+            var circle_marker_cd2f72da8d7020fc580d1314fde05e5f = L.circleMarker(
+                [40.0, 62.0],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_2cdfabae6f1f1e529c14acbbbe704793);
+        
+    
+        var popup_7761f7e899ef09af46bfb59c4f7d825a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1626c672515d4633adab79ec7a0e43de = $(`<div id="html_1626c672515d4633adab79ec7a0e43de" style="width: 100.0%; height: 100.0%;">Random Forest Forecast t+1<br>Cell: 71<br>Issue date: 2024-09-01<br>Observed current class: Normal / Wet<br>Forecast class: Normal / Wet</div>`)[0];
+                popup_7761f7e899ef09af46bfb59c4f7d825a.setContent(html_1626c672515d4633adab79ec7a0e43de);
+            
+        
+
+        circle_marker_cd2f72da8d7020fc580d1314fde05e5f.bindPopup(popup_7761f7e899ef09af46bfb59c4f7d825a)
+        ;
+
+        
+    
+</script>
+</html>

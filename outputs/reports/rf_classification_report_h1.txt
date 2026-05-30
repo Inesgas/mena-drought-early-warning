@@ -1,0 +1,13 @@
+Random Forest Classification Report - Horizon t+1
+
+                  precision    recall  f1-score   support
+
+    Normal / Wet       0.94      0.85      0.89      1658
+    Mild Drought       0.55      0.70      0.62       538
+Moderate Drought       0.60      0.75      0.67       271
+  Severe Drought       0.00      0.00      0.00        53
+
+        accuracy                           0.79      2520
+       macro avg       0.52      0.58      0.54      2520
+    weighted avg       0.80      0.79      0.79      2520
+

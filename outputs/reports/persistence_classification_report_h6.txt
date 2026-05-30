@@ -1,0 +1,13 @@
+Persistence Classification Report - Horizon t+6
+
+                  precision    recall  f1-score   support
+
+    Normal / Wet       0.79      0.77      0.78      1406
+    Mild Drought       0.30      0.31      0.30       463
+Moderate Drought       0.29      0.32      0.30       238
+  Severe Drought       0.21      0.21      0.21        53
+
+        accuracy                           0.61      2160
+       macro avg       0.40      0.40      0.40      2160
+    weighted avg       0.62      0.61      0.61      2160
+

@@ -7,6 +7,15 @@ import pandas as pd
 from .config import ProjectConfig
 
 
+def _load_pyplot():
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    return plt
+
+
 def save_confusion_matrix(
     y_true,
     y_pred,
@@ -14,9 +23,9 @@ def save_confusion_matrix(
     title: str,
     save_path: Path,
 ) -> None:
-    import matplotlib.pyplot as plt
     from sklearn.metrics import ConfusionMatrixDisplay
 
+    plt = _load_pyplot()
     fig, ax = plt.subplots(figsize=(7, 6))
     ConfusionMatrixDisplay.from_predictions(
         y_true,
@@ -38,8 +47,7 @@ def save_feature_importance_plot(
     title: str,
     save_path: Path,
 ) -> None:
-    import matplotlib.pyplot as plt
-
+    plt = _load_pyplot()
     fig, ax = plt.subplots(figsize=(10, 5))
     feature_importance.plot(kind="bar", ax=ax)
     ax.set_title(title)
@@ -55,14 +63,30 @@ def save_metric_comparison(
     title: str,
     save_path: Path,
 ) -> None:
-    import matplotlib.pyplot as plt
-
+    plt = _load_pyplot()
     fig, ax = plt.subplots(figsize=(8, 5))
     metric_df.plot(kind="bar", ax=ax)
     ax.set_title(title)
     ax.set_ylabel("Score")
     ax.set_ylim(0, 1)
     plt.xticks(rotation=0)
+    plt.tight_layout()
+    fig.savefig(save_path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+
+
+def save_risk_distribution(
+    df: pd.DataFrame,
+    risk_column: str,
+    title: str,
+    save_path: Path,
+) -> None:
+    plt = _load_pyplot()
+    fig, ax = plt.subplots(figsize=(8, 5))
+    df[risk_column].plot(kind="hist", bins=12, range=(0, 1), ax=ax, color="#C73E1D")
+    ax.set_title(title)
+    ax.set_xlabel("Forecast probability")
+    ax.set_ylabel("Grid cells")
     plt.tight_layout()
     fig.savefig(save_path, dpi=150, bbox_inches="tight")
     plt.close(fig)
@@ -104,6 +128,49 @@ def create_forecast_map(
                 f"Issue date: {row['date'].date()}<br>"
                 f"Observed current class: {row['drought_label']}<br>"
                 f"Forecast class: {label}"
+            ),
+        ).add_to(map_object)
+
+    map_object.save(str(save_path))
+    return map_object
+
+
+def create_risk_map(
+    df: pd.DataFrame,
+    risk_column: str,
+    uncertainty_column: str,
+    save_path: Path,
+    title_prefix: str,
+) -> object:
+    import folium
+
+    def risk_color(value: float) -> str:
+        if value >= 0.75:
+            return "#C73E1D"
+        if value >= 0.50:
+            return "#E76F51"
+        if value >= 0.25:
+            return "#F18F01"
+        return "#2E86AB"
+
+    map_object = folium.Map(location=[28, 10], zoom_start=4, tiles="CartoDB positron")
+
+    for _, row in df.iterrows():
+        risk = float(row[risk_column])
+        uncertainty = float(row[uncertainty_column])
+        folium.CircleMarker(
+            location=[row["lat"], row["lon"]],
+            radius=4 + 5 * risk,
+            color=risk_color(risk),
+            fill=True,
+            fill_opacity=0.8,
+            popup=(
+                f"{title_prefix}<br>"
+                f"Cell: {int(row['cell_id'])}<br>"
+                f"Issue date: {row['date'].date()}<br>"
+                f"Moderate-or-worse risk: {risk:.1%}<br>"
+                f"Uncertainty: {uncertainty:.1%}<br>"
+                f"Forecast class: {row['rf_prediction_label']}"
             ),
         ).add_to(map_object)
 

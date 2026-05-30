@@ -1,6 +1,6 @@
 # Data
 
-This folder stores project-specific data products when you decide to export them locally.
+This folder stores project-specific data products exported locally.
 
 Folder layout:
 

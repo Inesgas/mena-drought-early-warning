@@ -2,7 +2,7 @@
 
 ## Objective
 
-This project forecasts drought severity across the MENA region at 1-month and 3-month horizons.
+This project forecasts drought severity across the MENA region at 1-month, 3-month, and 6-month horizons.
 
 The workflow uses monthly satellite and climate variables, aggregates them to grid cells, builds lagged and anomaly-based predictors, and evaluates model performance on later time periods.
 
@@ -22,6 +22,8 @@ The workflow uses Earth Engine datasets with broad temporal coverage:
 - TerraClimate variables for water-balance conditions
 
 The working period is `2001-01-01` to `2024-12-31`.
+
+The completed local run in this repository uses a reproducible sample table with the same columns as the Earth Engine export. This supports local generation of the full pipeline, reports, figures, tables, and map. The sample-run metrics are not final operational accuracy.
 
 ## Spatial Unit
 
@@ -47,6 +49,7 @@ The target is the future drought class within the same grid cell:
 
 - `drought_class_t_plus_1`
 - `drought_class_t_plus_3`
+- `drought_class_t_plus_6`
 
 Targets are created by sorting each grid-cell time series by date and shifting drought class forward by the forecast horizon.
 
@@ -60,6 +63,8 @@ The split is temporal:
 
 This preserves the order of time and evaluates the models on later months.
 
+The benchmark run also includes spatial holdout validation. Grid cells are grouped into west, central, and east longitude bands. For each fold, the model trains on earlier months outside one band and tests on later months inside the held-out band.
+
 ## Models
 
 The main baselines are:
@@ -68,6 +73,8 @@ The main baselines are:
 - Random Forest: learn from the engineered monthly predictors
 
 The project also includes optional XGBoost support and LSTM sequence dataset preparation.
+
+Random Forest probabilities are exported for each drought class. These probabilities are also summarized as drought risk, moderate-or-worse drought risk, severe drought risk, confidence, and uncertainty.
 
 ## Metrics
 
@@ -84,10 +91,11 @@ Model comparison uses:
 The workflow writes:
 
 - model metrics
+- spatial validation metrics
 - classification reports
 - confusion matrices
 - Random Forest feature importance
-- forecast issue tables
-- interactive forecast maps
+- forecast issue tables with probability and risk columns
+- interactive forecast maps and risk maps
 
 These outputs are stored under `outputs/`.

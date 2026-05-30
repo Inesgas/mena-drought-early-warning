@@ -8,21 +8,27 @@ import pandas as pd
 from .config import ProjectConfig
 from .features import add_forecast_features, build_forecast_dataset, default_feature_columns
 from .modeling import (
+    SPATIAL_REGION_COLUMN,
+    assign_spatial_regions,
     classification_report_text,
     evaluate_predictions,
     feature_importance_series,
     fit_random_forest,
     fit_xgboost_classifier,
     predict_persistence,
+    predict_class_probabilities,
+    spatial_holdout_split,
     temporal_split,
     xgboost_available,
 )
 from .reporting import (
     create_forecast_map,
+    create_risk_map,
     export_forecast_table,
     save_confusion_matrix,
     save_feature_importance_plot,
     save_metric_comparison,
+    save_risk_distribution,
 )
 from .utils import ensure_project_directories
 
@@ -46,9 +52,12 @@ REQUIRED_MONTHLY_COLUMNS = [
 class BaselinePipelineResult:
     feature_table: pd.DataFrame
     metrics: pd.DataFrame
+    spatial_metrics: pd.DataFrame
     test_predictions: dict[int, pd.DataFrame]
     forecast_table_path: Path | None
     forecast_map_path: Path | None
+    forecast_risk_map_path: Path | None
+    spatial_metrics_path: Path | None
     summary_path: Path | None
 
 
@@ -99,6 +108,7 @@ def write_classification_report(
 
 def write_run_summary(
     metrics_df: pd.DataFrame,
+    spatial_metrics_df: pd.DataFrame,
     config: ProjectConfig,
     save_path: Path,
     include_xgboost: bool,
@@ -125,6 +135,24 @@ def write_run_summary(
                 f"t+{int(row['horizon'])}: `{row['model']}` "
                 f"(macro F1 `{row['macro_f1']:.3f}`, "
                 f"balanced accuracy `{row['balanced_accuracy']:.3f}`)"
+        )
+
+    lines.extend(
+        [
+            "",
+            "## Spatial Holdout Check",
+            "",
+        ]
+    )
+    if spatial_metrics_df.empty:
+        lines.append("No spatial holdout metrics were produced.")
+    else:
+        rf_spatial = spatial_metrics_df[spatial_metrics_df["model"] == "Random Forest"]
+        for horizon, group in rf_spatial.groupby("horizon"):
+            mean_f1 = group["macro_f1"].mean()
+            lines.append(
+                f"- t+{int(horizon)} Random Forest mean macro F1 across held-out regions: "
+                f"`{mean_f1:.3f}`"
             )
 
     lines.extend(
@@ -139,6 +167,63 @@ def write_run_summary(
         ]
     )
     save_path.write_text("\n".join(lines), encoding="utf-8")
+
+
+def run_spatial_holdout_validation(
+    feature_df: pd.DataFrame,
+    config: ProjectConfig,
+    horizons: list[int],
+    feature_columns: list[str],
+) -> pd.DataFrame:
+    spatial_results: list[dict[str, float | int | str]] = []
+    regions = sorted(feature_df[SPATIAL_REGION_COLUMN].dropna().unique())
+
+    for horizon in horizons:
+        model_df, target_column = build_forecast_dataset(
+            feature_df,
+            horizon,
+            feature_columns,
+            config,
+        )
+
+        for region in regions:
+            split = spatial_holdout_split(
+                model_df,
+                holdout_region=region,
+                train_end_date=config.train_end_date,
+                valid_end_date=config.valid_end_date,
+            )
+            if split.train.empty or split.test.empty:
+                continue
+
+            persistence_pred = predict_persistence(split.test)
+            persistence_metrics = evaluate_predictions(split.test[target_column], persistence_pred)
+            spatial_results.append(
+                {
+                    "horizon": horizon,
+                    "holdout_region": region,
+                    "model": "Persistence",
+                    "train_rows": len(split.train),
+                    "test_rows": len(split.test),
+                    **persistence_metrics,
+                }
+            )
+
+            rf_model = fit_random_forest(split.train, feature_columns, target_column)
+            rf_test_pred = rf_model.predict(split.test[feature_columns])
+            rf_metrics = evaluate_predictions(split.test[target_column], rf_test_pred)
+            spatial_results.append(
+                {
+                    "horizon": horizon,
+                    "holdout_region": region,
+                    "model": "Random Forest",
+                    "train_rows": len(split.train),
+                    "test_rows": len(split.test),
+                    **rf_metrics,
+                }
+            )
+
+    return pd.DataFrame(spatial_results)
 
 
 def run_baseline_pipeline(
@@ -163,7 +248,7 @@ def run_baseline_pipeline(
 
     issue_date = issue_date or config.forecast_issue_date
     feature_columns = default_feature_columns()
-    feature_df = add_forecast_features(raw_df, config)
+    feature_df = assign_spatial_regions(add_forecast_features(raw_df, config))
     results: list[dict[str, float | int | str]] = []
     test_predictions: dict[int, pd.DataFrame] = {}
 
@@ -203,6 +288,11 @@ def run_baseline_pipeline(
 
         rf_model = fit_random_forest(split.train, feature_columns, target_column)
         rf_test_pred = rf_model.predict(split.test[feature_columns])
+        rf_probability_df = predict_class_probabilities(
+            rf_model,
+            split.test[feature_columns],
+            config.class_names,
+        )
         rf_metrics = evaluate_predictions(split.test[target_column], rf_test_pred)
         results.append({"horizon": horizon, "model": "Random Forest", **rf_metrics})
 
@@ -235,6 +325,7 @@ def run_baseline_pipeline(
         horizon_test_df["rf_prediction_label"] = horizon_test_df["rf_prediction"].map(
             config.class_names
         )
+        horizon_test_df = pd.concat([horizon_test_df, rf_probability_df], axis=1)
 
         if include_xgboost and xgboost_available():
             xgb_model = fit_xgboost_classifier(
@@ -265,6 +356,15 @@ def run_baseline_pipeline(
     metrics_path = config.tables_dir / "forecast_model_metrics.csv"
     metrics_df.to_csv(metrics_path, index=False)
 
+    spatial_metrics_df = run_spatial_holdout_validation(
+        feature_df,
+        config,
+        horizons,
+        feature_columns,
+    )
+    spatial_metrics_path = config.tables_dir / "spatial_validation_metrics.csv"
+    spatial_metrics_df.to_csv(spatial_metrics_path, index=False)
+
     for horizon in horizons:
         metric_subset = metrics_df[metrics_df["horizon"] == horizon].set_index("model")[
             ["accuracy", "balanced_accuracy", "macro_f1"]
@@ -293,10 +393,20 @@ def run_baseline_pipeline(
         "lst_c",
         "pdsi",
         "vpd",
+        SPATIAL_REGION_COLUMN,
         "drought_label",
         "observed_future_label",
         "rf_prediction_label",
         "persistence_prediction_label",
+        "rf_probability_normal_wet",
+        "rf_probability_mild_drought",
+        "rf_probability_moderate_drought",
+        "rf_probability_severe_drought",
+        "rf_confidence",
+        "rf_uncertainty",
+        "rf_drought_risk",
+        "rf_moderate_plus_risk",
+        "rf_severe_risk",
     ]
     if "xgb_prediction_label" in selected_issue_df.columns:
         export_columns.append("xgb_prediction_label")
@@ -304,6 +414,7 @@ def run_baseline_pipeline(
     export_forecast_table(selected_issue_df, forecast_table_path, export_columns)
 
     forecast_map_path = None
+    forecast_risk_map_path = None
     if export_map:
         forecast_map_path = (
             config.maps_dir
@@ -316,15 +427,35 @@ def run_baseline_pipeline(
             config=config,
             title_prefix=f"Random Forest Forecast t+{selected_horizon}",
         )
+        forecast_risk_map_path = (
+            config.maps_dir
+            / f"forecast_risk_map_h{selected_horizon}_{selected_issue_date.strftime('%Y_%m')}.html"
+        )
+        create_risk_map(
+            selected_issue_df,
+            risk_column="rf_moderate_plus_risk",
+            uncertainty_column="rf_uncertainty",
+            save_path=forecast_risk_map_path,
+            title_prefix=f"Random Forest Risk Forecast t+{selected_horizon}",
+        )
+        save_risk_distribution(
+            selected_issue_df,
+            risk_column="rf_moderate_plus_risk",
+            title=f"Moderate-or-worse Risk Distribution - Horizon t+{selected_horizon}",
+            save_path=config.figures_dir / f"rf_risk_distribution_h{selected_horizon}.png",
+        )
 
     summary_path = config.reports_dir / "baseline_run_summary.md"
-    write_run_summary(metrics_df, config, summary_path, include_xgboost)
+    write_run_summary(metrics_df, spatial_metrics_df, config, summary_path, include_xgboost)
 
     return BaselinePipelineResult(
         feature_table=feature_df,
         metrics=metrics_df,
+        spatial_metrics=spatial_metrics_df,
         test_predictions=test_predictions,
         forecast_table_path=forecast_table_path,
         forecast_map_path=forecast_map_path,
+        forecast_risk_map_path=forecast_risk_map_path,
+        spatial_metrics_path=spatial_metrics_path,
         summary_path=summary_path,
     )

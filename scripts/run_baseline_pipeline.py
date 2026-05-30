@@ -78,9 +78,12 @@ def main() -> None:
 
     print("Baseline pipeline complete.")
     print(f"Metrics: {config.tables_dir / 'forecast_model_metrics.csv'}")
+    print(f"Spatial validation metrics: {result.spatial_metrics_path}")
     print(f"Forecast issue table: {result.forecast_table_path}")
     if result.forecast_map_path is not None:
         print(f"Forecast map: {result.forecast_map_path}")
+    if result.forecast_risk_map_path is not None:
+        print(f"Forecast risk map: {result.forecast_risk_map_path}")
     print(f"Run summary: {result.summary_path}")
 
 
